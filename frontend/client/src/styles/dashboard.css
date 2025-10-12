@@ -1,0 +1,781 @@
+/* Dashboard Styles - Pixel Perfect Implementation */
+
+/* ===== LAYOUT CONTAINERS ===== */
+.dashboard {
+  min-height: 100vh;
+  background-color: #f1eeea87;
+}
+
+.dashboard__main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ===== APP HEADER ===== */
+.app-header {
+  background-color: #FFFFFF;
+  border-bottom: 1px solid #E5E5E5;
+  padding: 16px 0;
+}
+
+.app-header__container {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.app-header__branding {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.app-header__logo {
+  color: #1A2B42;
+  display: flex;
+  align-items: center;
+}
+
+.app-header__title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #1A2B42;
+  margin: 0;
+}
+
+.app-header__nav {
+  display: flex;
+  gap: 16px;
+}
+
+.app-header__nav-button {
+  background-color: #FFFFFF;
+  border: 1px solid #E5E5E5;
+  color: #333333;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  /* Transitions removed */
+}
+
+/* Hover effects removed */
+
+.app-header__nav-button:focus {
+  outline: 2px solid #1A2B42;
+  outline-offset: 2px;
+}
+
+/* ===== DASHBOARD HERO ===== */
+.dashboard__hero {
+  padding: 48px 0 32px 0;
+}
+
+.dashboard__title {
+  font-size: 32px;
+  font-weight: 700;
+  color: #333333;
+  margin: 0 0 8px 0;
+  line-height: 1.2;
+}
+
+.dashboard__description {
+  font-size: 16px;
+  color: #555555;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* ===== ACTION CARDS ===== */
+.dashboard__actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-bottom: 48px;
+}
+
+/* ===== CARD COMPONENT ===== */
+.card-dashboard {
+  background-color: #FFFFFF;
+  border-radius: 8px;
+}
+
+
+.card--action {
+  padding: 24px;
+}
+
+.card--hearing {
+  padding: 16px;
+  margin-bottom: 0;
+  border: 1px solid #E5E5E5;
+  background-color: #F8F8F8;
+  border-radius: 6px;
+}
+
+/* ===== ACTION CARD ===== */
+.action-card__header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.action-card__icon {
+  color: #1A2B42;
+}
+
+.action-card__title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #333333;
+  margin: 0;
+}
+
+.action-card__description {
+  font-size: 14px;
+  color: #555555;
+  margin: 0 0 20px 0;
+  line-height: 1.4;
+}
+
+.action-card__input {
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+.action-card__button {
+  width: 100%;
+  margin-top: 8px;
+}
+
+/* ===== BUTTON COMPONENT ===== */
+.btn {
+  border: none;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  /* Transitions removed */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.btn:focus {
+  outline: 2px solid #1A2B42;
+  outline-offset: 2px;
+}
+
+.btn--primary {
+  background-color: #1A2B42;
+  color: #FFFFFF;
+  padding: 12px 24px;
+  font-size: 14px;
+  border-radius: 6px;
+}
+
+
+
+.btn--secondary {
+  background-color: #FFFFFF;
+  color: #333333;
+  border: 1px solid #E5E5E5;
+  padding: 12px 24px;
+  font-size: 14px;
+  border-radius: 6px;
+}
+
+
+.btn--large {
+  padding: 14px 28px;
+  font-size: 16px;
+}
+
+.btn--small {
+  padding: 8px 16px;
+  font-size: 12px;
+}
+
+/* ===== INPUT COMPONENT ===== */
+.input {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid #E5E5E5;
+  border-radius: 6px;
+  font-size: 14px;
+  color: #333333;
+  background-color: #FFFFFF;
+  /* Transitions removed */
+}
+
+.input:focus {
+  outline: none;
+  border-color: #1A2B42;
+  box-shadow: 0 0 0 3px rgba(26, 43, 66, 0.1);
+}
+
+.input::placeholder {
+  color: #999999;
+}
+
+/* ===== SECTION COMPONENT ===== */
+.section {
+  margin-bottom: 32px;
+}
+
+.section__header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.section__icon {
+  color: #1A2B42;
+}
+
+.section__title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #333333;
+  margin: 0;
+}
+
+.section__description {
+  font-size: 14px;
+  color: #555555;
+  margin: 0 0 20px 0;
+  line-height: 1.4;
+}
+
+.section__content {
+  display: block;
+}
+
+/* ===== HEARING CARD ===== */
+.hearing-card__header {
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.hearing-card__title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333333;
+  margin: 0;
+  flex: 1;
+  margin-right: 12px;
+}
+
+.hearing-card__details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 8px;
+  align-items: center;
+}
+
+.hearing-card__detail {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.hearing-card__icon {
+  color: #555555;
+}
+
+.hearing-card__text {
+  font-size: 14px;
+  color: #555555;
+}
+
+.hearing-card__case-id {
+  font-size: 14px;
+  color: #999999;
+}
+
+.hearing-card__actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 4px;
+}
+
+/* ===== BADGE COMPONENT ===== */
+.badge_ {
+  padding: 3px 6px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.badge--scheduled {
+  background-color: #F5F5F5;
+  color: #000000;
+}
+
+.badge--confirmed {
+  background-color: #1A2B42;
+  color: #FFFFFF;
+}
+
+.badge--default {
+  background-color: #E5E5E5;
+  color: #333333;
+}
+
+/* ===== HEARINGS LIST ===== */
+.hearings-list {
+  background-color: #FFFFFF;
+  border: 1px solid #E5E5E5;
+  border-radius: 8px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.hearings-list__header {
+  margin-bottom: 8px;
+}
+
+.hearings-list__title-section {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.hearings-list__icon {
+  color: #1A2B42;
+}
+
+.hearings-list__title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #333333;
+  margin: 0;
+}
+
+.hearings-list__description {
+  font-size: 14px;
+  color: #555555;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.hearings-list__content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Alerts */
+.alerts {
+  margin-bottom: 24px;
+}
+
+.alerts__title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #1A2B42;
+  margin: 0 0 12px 0;
+}
+
+.alerts__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.alerts__item {
+  background: #FFFFFF;
+  border: 1px solid #E5E5E5;
+  border-radius: 8px;
+  padding: 12px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.alerts__item--critical {
+  background: #fdeeee;
+  border-color: #f0caca;
+}
+
+.alerts__icon {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #1A2B42;
+  color: #FFFFFF;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+}
+
+.alerts__text {
+  flex: 1;
+  color: #333333;
+  font-size: 14px;
+}
+
+.alerts__button {
+  white-space: nowrap;
+}
+
+/* Hearings header count badge */
+.count-badge {
+  margin-left: 8px;
+  padding: 2px 6px;
+  font-size: 12px;
+  border-radius: 8px;
+  background: #F5F5F5;
+  color: #333333;
+}
+
+/* Priority chip near title */
+.priority-chip {
+  margin-left: 8px;
+  padding: 2px 6px;
+  font-size: 11px;
+  border-radius: 999px;
+  border: 1px solid #E5E5E5;
+  color: #333333;
+}
+
+.priority-chip--danger { background: #fdeeee; border-color: #f0caca; color: #8a1c1c; }
+.priority-chip--warning { background: #fff6e5; border-color: #f8e4bf; color: #8a5f00; }
+.priority-chip--default { background: #f0f9f0; border-color: #c6e6c6; color: #166534; }
+
+/* Case ID pill */
+.hearing-card__case-pill {
+  padding: 4px 8px;
+  background: #F5F5F5;
+  border: 1px solid #E5E5E5;
+  border-radius: 999px;
+  font-size: 12px;
+  color: #333333;
+}
+
+/* Two actions aligned to right with gap */
+.hearing-card__actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.hearing-card__start {
+  background-color: #0F1A2E;
+  color: #FFFFFF;
+}
+
+/* Badges (status) override to avoid user rename) */
+.badge,
+.badge_ {
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+/* Status colors */
+.badge--scheduled { background-color: #F5F5F5; color: #333333; }
+.badge--confirmed { background-color: #1A2B42; color: #FFFFFF; }
+
+/* Stats */
+.stats { margin: 32px 0 24px 0; }
+.stats__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.stat-card {
+  background: #FFFFFF;
+  border: 1px solid #E5E5E5;
+  border-radius: 8px;
+  padding: 16px;
+}
+
+.stat-card__icon { color: #0F1A2E; margin-bottom: 8px; }
+.stat-card__value { font-size: 24px; font-weight: 700; color: #0F1A2E; }
+.stat-card__label { font-size: 14px; color: #555555; }
+
+@media (max-width: 992px) {
+  .stats__grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 576px) {
+  .stats__grid { grid-template-columns: 1fr; }
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 768px) {
+  .dashboard__main {
+    padding: 0 16px;
+  }
+  
+  .app-header__container {
+    padding: 0 16px;
+  }
+  
+  .dashboard__actions {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  
+  .dashboard__hero {
+    padding: 32px 0 24px 0;
+  }
+  
+  .dashboard__title {
+    font-size: 28px;
+  }
+  
+  .hearing-card__header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  
+  .hearing-card__details {
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .hearing-card__actions {
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 480px) {
+  .dashboard__title {
+    font-size: 24px;
+  }
+  
+  .dashboard__description {
+    font-size: 14px;
+  }
+  
+  .card--action {
+    padding: 20px;
+  }
+  
+  .card--hearing {
+    padding: 16px;
+  }
+  
+  .app-header__nav {
+    gap: 8px;
+  }
+  
+  .app-header__nav-button {
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+}
+
+/* ===== ACCESSIBILITY ===== */
+@media (prefers-reduced-motion: reduce) {
+  .card,
+  .btn,
+  .input {
+    transition: none;
+  }
+  
+  .card:hover {
+    transform: none;
+  }
+  
+  .btn:hover {
+    transform: none;
+  }
+}
+
+/* ===== FOCUS STATES ===== */
+.btn:focus-visible,
+.app-header__nav-button:focus-visible,
+.input:focus-visible {
+  outline: 2px solid #1A2B42;
+  outline-offset: 2px;
+}
+
+/* ===== HIGH CONTRAST MODE ===== */
+@media (prefers-contrast: high) {
+  .card {
+    border: 1px solid #000000;
+  }
+  
+  .btn--secondary {
+    border: 2px solid #000000;
+  }
+  
+  .input {
+    border: 2px solid #000000;
+  }
+}
+
+/* ===== DASHBOARD UPLOAD MODAL (scoped) ===== */
+.dashboard-upload-modal .dashboard-upload-modal__dialog {
+  max-width: 700px; /* a little extra width */
+}
+
+.dashboard-upload-modal .dashboard-upload-modal__content {
+  border-radius: 12px;
+  border: 1px solid #E5E5E5;
+  background: #FFFFFF;
+}
+
+.dashboard-upload-modal .dashboard-upload-modal__header {
+  border-bottom: 1px solid #E5E5E5;
+  background: #FFFFFF;
+  padding: 16px 20px;
+}
+
+.dashboard-upload-modal .modal-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #333333;
+  margin: 0;
+}
+
+.dashboard-upload-modal .dashboard-upload-modal__body {
+  background: #F8F8F8; /* soft panel bg to match cards */
+  padding: 16px 20px;
+}
+
+.dashboard-upload-modal .form-label {
+  font-size: 14px;
+  color: #555555;
+}
+
+.dashboard-upload-modal .form-control,
+.dashboard-upload-modal .form-select {
+  border: 1px solid #E5E5E5;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+.dashboard-upload-modal .form-control:focus,
+.dashboard-upload-modal .form-select:focus {
+  outline: none;
+  border-color: #1A2B42;
+  box-shadow: 0 0 0 3px rgba(26, 43, 66, 0.1);
+}
+
+.dashboard-upload-modal .dashboard-upload-modal__footer {
+  border-top: 1px solid #E5E5E5;
+  background: #FFFFFF;
+  padding: 12px 20px;
+}
+
+.dashboard-upload-modal .form-text {
+  color: #999999;
+  font-size: 12px;
+}
+
+/* ===== DASHBOARD UPLOAD DROPZONE (scoped) ===== */
+.dashboard-upload-modal .dashboard-upload-dropzone {
+  background: #FFFFFF;
+  border: 2px dashed #000000; /* tealish dotted like reference */
+  border-radius: 12px;
+  padding: 28px 20px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.dashboard-upload-modal .dashboard-upload-dropzone--active {
+  background: #f4fffd;
+  border-color: #1aa39a;
+}
+
+.dashboard-upload-modal .dashboard-upload-dropzone__icon {
+  width: 72px;
+  height: 72px;
+  margin: 0 auto 8px;
+  border-radius: 16px;
+  background: linear-gradient(180deg, #c2cdff  0%, #e6f6ff  100%);
+  border: 1px solid #d1ebf5;
+}
+
+.dashboard-upload-modal .dashboard-upload-dropzone__title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #333333;
+}
+
+.dashboard-upload-modal .dashboard-upload-dropzone__subtitle {
+  font-size: 12px;
+  color: #6b7280; /* gray-500 */
+}
+
+.dashboard-upload-modal .dashboard-upload-dropzone__file {
+  font-size: 12px;
+}
+
+/* OR separator */
+.dashboard-upload-modal .dashboard-upload-or {
+  display: flex;
+  align-items: center;
+  margin: 16px 0;
+  color: #9ca3af;
+  font-size: 12px;
+}
+.dashboard-upload-modal .dashboard-upload-or::before,
+.dashboard-upload-modal .dashboard-upload-or::after {
+  content: "";
+  display: block;
+  height: 1px;
+  background: #E5E5E5;
+  flex: 1;
+}
+.dashboard-upload-modal .dashboard-upload-or span {
+  padding: 0 8px;
+}
+
+/* URL upload */
+.dashboard-upload-modal .dashboard-upload-url .input-group .form-control {
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
+.dashboard-upload-modal .dashboard-upload-url .input-group .btn {
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+.dashboard-upload-modal .dashboard-upload-note {
+  font-size: 12px;
+  color: #9ca3af;
+  margin-top: 12px;
+}
+
+/* Dropzone image icon */
+.dashboard-upload-modal .dashboard-upload-dropzone__icon-img {
+  width: 72px;
+  height: 72px;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto 8px;
+}

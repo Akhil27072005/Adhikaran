@@ -1,0 +1,260 @@
+/* PRIVACY PAGE — namespace: privacypage- — Do not reuse these class names elsewhere */
+
+/* Page-scoped CSS variables */
+.privacypage-container {
+  --privacypage-primary-color: #1A2B42;
+  --privacypage-secondary-color: #FF8C00;
+  --privacypage-background-color: #F8F8F8;
+  --privacypage-card-background: #FFFFFF;
+  --privacypage-text-primary: #333333;
+  --privacypage-text-secondary: #555555;
+  --privacypage-text-muted: #777777;
+  --privacypage-border-color: #E5E5E5;
+  --privacypage-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  --privacypage-shadow-hover: 0 4px 16px rgba(0, 0, 0, 0.12);
+  --privacypage-border-radius: 8px;
+  --privacypage-spacing-xs: 8px;
+  --privacypage-spacing-sm: 16px;
+  --privacypage-spacing-md: 24px;
+  --privacypage-spacing-lg: 32px;
+  --privacypage-spacing-xl: 48px;
+}
+
+/* Main container */
+.privacypage-container {
+  min-height: 100vh;
+  background-color: var(--privacypage-background-color);
+}
+
+.privacypage-header-wrapper {
+  /* Wrapper for role header - no additional styling needed */
+}
+
+.privacypage-main {
+  padding: var(--privacypage-spacing-lg) 0;
+}
+
+.privacypage-content-wrapper {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 var(--privacypage-spacing-md);
+}
+
+/* Title section */
+.privacypage-title-section {
+  text-align: center;
+  margin-bottom: var(--privacypage-spacing-xl);
+}
+
+.privacypage-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--privacypage-primary-color);
+  margin-bottom: var(--privacypage-spacing-xs);
+}
+
+.privacypage-subtitle {
+  font-size: 1rem;
+  color: var(--privacypage-text-muted);
+  margin: 0;
+  font-style: italic;
+}
+
+/* Introduction */
+.privacypage-intro {
+  background-color: var(--privacypage-card-background);
+  border: 1px solid var(--privacypage-border-color);
+  border-radius: var(--privacypage-border-radius);
+  box-shadow: var(--privacypage-shadow);
+  padding: var(--privacypage-spacing-lg);
+  margin-bottom: var(--privacypage-spacing-lg);
+}
+
+.privacypage-intro-text {
+  font-size: 1.125rem;
+  line-height: 1.6;
+  color: var(--privacypage-text-primary);
+  margin: 0;
+}
+
+/* Sections container */
+.privacypage-sections {
+  display: flex;
+  flex-direction: column;
+  gap: var(--privacypage-spacing-md);
+  margin-bottom: var(--privacypage-spacing-lg);
+}
+
+/* Individual sections */
+.privacypage-section {
+  background-color: var(--privacypage-card-background);
+  border: 1px solid var(--privacypage-border-color);
+  border-radius: var(--privacypage-border-radius);
+  box-shadow: var(--privacypage-shadow);
+  padding: var(--privacypage-spacing-lg);
+  transition: box-shadow 0.2s ease;
+}
+
+.privacypage-section:hover {
+  box-shadow: var(--privacypage-shadow-hover);
+}
+
+.privacypage-section-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--privacypage-primary-color);
+  margin-bottom: var(--privacypage-spacing-md);
+  display: flex;
+  align-items: center;
+  gap: var(--privacypage-spacing-sm);
+}
+
+.privacypage-section-number {
+  background-color: var(--privacypage-primary-color);
+  color: white;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.privacypage-section-content {
+  color: var(--privacypage-text-primary);
+  line-height: 1.6;
+}
+
+.privacypage-subsection-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--privacypage-primary-color);
+  margin-bottom: var(--privacypage-spacing-sm);
+  margin-top: var(--privacypage-spacing-md);
+}
+
+.privacypage-subsection-title:first-child {
+  margin-top: 0;
+}
+
+.privacypage-text {
+  margin-bottom: var(--privacypage-spacing-sm);
+  line-height: 1.6;
+}
+
+.privacypage-text:last-child {
+  margin-bottom: 0;
+}
+
+/* Contact section */
+.privacypage-contact {
+  margin-top: var(--privacypage-spacing-lg);
+}
+
+.privacypage-contact-card {
+  background-color: var(--privacypage-card-background);
+  border: 2px solid var(--privacypage-secondary-color);
+  border-radius: var(--privacypage-border-radius);
+  padding: var(--privacypage-spacing-lg);
+  text-align: center;
+}
+
+.privacypage-contact-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--privacypage-primary-color);
+  margin-bottom: var(--privacypage-spacing-sm);
+}
+
+.privacypage-contact-text {
+  color: var(--privacypage-text-secondary);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .privacypage-title {
+    font-size: 2rem;
+  }
+  
+  .privacypage-content-wrapper {
+    padding: 0 var(--privacypage-spacing-sm);
+  }
+  
+  .privacypage-section {
+    padding: var(--privacypage-spacing-md);
+  }
+  
+  .privacypage-intro {
+    padding: var(--privacypage-spacing-md);
+  }
+  
+  .privacypage-contact-card {
+    padding: var(--privacypage-spacing-md);
+  }
+  
+  .privacypage-section-title {
+    font-size: 1.25rem;
+    flex-direction: column;
+    text-align: center;
+    gap: var(--privacypage-spacing-xs);
+  }
+  
+  .privacypage-section-number {
+    width: 28px;
+    height: 28px;
+    font-size: 0.875rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .privacypage-title {
+    font-size: 1.75rem;
+  }
+  
+  .privacypage-intro-text {
+    font-size: 1rem;
+  }
+}
+
+/* Print styles */
+@media print {
+  .privacypage-container {
+    background-color: white;
+  }
+  
+  .privacypage-section,
+  .privacypage-intro,
+  .privacypage-contact-card {
+    background-color: white;
+    box-shadow: none;
+    border: 1px solid #000;
+    page-break-inside: avoid;
+    margin-bottom: 1rem;
+  }
+  
+  .privacypage-header-wrapper {
+    display: none;
+  }
+  
+  .privacypage-section-number {
+    background-color: white;
+    color: black;
+    border: 2px solid black;
+  }
+}
+
+/* Focus states for accessibility */
+.privacypage-section:focus-within {
+  outline: 2px solid var(--privacypage-primary-color);
+  outline-offset: 2px;
+}
+
+.privacypage-contact-card:focus-within {
+  outline: 2px solid var(--privacypage-secondary-color);
+  outline-offset: 2px;
+}

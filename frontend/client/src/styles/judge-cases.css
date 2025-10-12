@@ -1,0 +1,334 @@
+/* NAMESPACED CSS for Judge Cases Page */
+
+/* Card Component Base Styles */
+.card-dashboard {
+  background: #FFFFFF;
+  border: 1px solid #E5E5E5;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 16px;
+  transition: all 0.2s ease;
+}
+
+.card-dashboard:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+.card--default {
+  background: #FFFFFF;
+  border: 1px solid #E5E5E5;
+}
+
+.judge-cases-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px;
+  background-color: #f8f9fa;
+  min-height: 100vh;
+}
+
+.judge-cases-title {
+  text-align: center;
+  color: #1A2B42;
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 32px;
+}
+
+.judge-cases-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 32px;
+}
+
+.judge-cases-tab {
+  background-color: transparent;
+  color: #1A2B42;
+  border: 2px solid #1A2B42;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.judge-cases-tab:hover {
+  background-color: rgba(26, 43, 66, 0.1);
+}
+
+.judge-cases-tab--active {
+  background-color: #1A2B42;
+  color: #ffffff;
+}
+
+.judge-cases-tab--active:hover {
+  background-color: #0F1A2B;
+}
+
+.judge-cases-content {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Upcoming Cases Component Styles */
+.judge-cases-upcoming {
+  display: grid;
+  gap: 16px;
+}
+
+.judge-cases-upcoming-item {
+  background-color: #f8f9fa;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 16px;
+  transition: all 0.2s ease;
+}
+
+.judge-cases-upcoming-item:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+.judge-cases-upcoming-header {
+  display: flex;
+  justify-content: between;
+  align-items: flex-start;
+  margin-bottom: 12px;
+}
+
+.judge-cases-upcoming-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1A2B42;
+  margin: 0;
+  flex: 1;
+}
+
+.judge-cases-upcoming-status {
+  background-color: #1A2B42;
+  color: #ffffff;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.judge-cases-upcoming-details {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.judge-cases-upcoming-detail {
+  display: flex;
+  flex-direction: column;
+}
+
+.judge-cases-upcoming-detail-label {
+  font-size: 12px;
+  color: #6b7280;
+  font-weight: 500;
+  margin-bottom: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.judge-cases-upcoming-detail-value {
+  font-size: 14px;
+  color: #1A2B42;
+  font-weight: 500;
+}
+
+/* Closed Cases Component Styles */
+.judge-cases-closed {
+  display: grid;
+  gap: 16px;
+}
+
+.judge-cases-closed-item {
+  background-color: #f8f9fa;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 16px;
+  transition: all 0.2s ease;
+}
+
+.judge-cases-closed-item:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+.judge-cases-closed-header {
+  display: flex;
+  justify-content: between;
+  align-items: flex-start;
+  margin-bottom: 12px;
+}
+
+.judge-cases-closed-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1A2B42;
+  margin: 0;
+  flex: 1;
+}
+
+.judge-cases-closed-verdict {
+  background-color: #10b981;
+  color: #ffffff;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.judge-cases-closed-details {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.judge-cases-closed-detail {
+  display: flex;
+  flex-direction: column;
+}
+
+.judge-cases-closed-detail-label {
+  font-size: 12px;
+  color: #6b7280;
+  font-weight: 500;
+  margin-bottom: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.judge-cases-closed-detail-value {
+  font-size: 14px;
+  color: #1A2B42;
+  font-weight: 500;
+}
+
+.judge-cases-closed-summary {
+  margin-top: 12px;
+  padding: 12px;
+  background-color: #ffffff;
+  border-radius: 6px;
+  border-left: 4px solid #1A2B42;
+}
+
+.judge-cases-closed-summary-label {
+  font-size: 12px;
+  color: #6b7280;
+  font-weight: 500;
+  margin-bottom: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.judge-cases-closed-summary-text {
+  font-size: 14px;
+  color: #374151;
+  line-height: 1.5;
+}
+
+/* Loading and Empty States */
+.judge-cases-loading {
+  text-align: center;
+  padding: 48px;
+  color: #6b7280;
+  font-size: 16px;
+}
+
+.judge-cases-empty {
+  text-align: center;
+  padding: 48px;
+  color: #6b7280;
+}
+
+.judge-cases-empty-icon {
+  font-size: 48px;
+  margin-bottom: 16px;
+}
+
+.judge-cases-empty-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1A2B42;
+  margin-bottom: 8px;
+}
+
+.judge-cases-empty-description {
+  font-size: 14px;
+  color: #6b7280;
+}
+
+/* Button Component Styles */
+.btn--primary {
+  background-color: #1A2B42;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.btn--primary:hover {
+  background-color: #0F1A2B;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(26, 43, 66, 0.3);
+}
+
+.btn--primary:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(26, 43, 66, 0.3);
+}
+
+.btn--small {
+  padding: 8px 16px;
+  font-size: 12px;
+}
+
+.btn--medium {
+  padding: 12px 24px;
+  font-size: 14px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .judge-cases-container {
+    padding: 16px;
+  }
+  
+  .judge-cases-title {
+    font-size: 24px;
+  }
+  
+  .judge-cases-tabs {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .judge-cases-tab {
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  .judge-cases-upcoming-details,
+  .judge-cases-closed-details {
+    grid-template-columns: 1fr;
+  }
+}

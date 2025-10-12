@@ -1,0 +1,104 @@
+/* AddCase page (namespaced) */
+.addcase-page {
+  background: #f1eeea87;
+  min-height: 100vh;
+}
+
+.addcase-main {
+  padding: 24px 16px;
+}
+
+.addcase-card {
+  border: 1px solid #E5E5E5;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+}
+
+.addcase-header { margin-bottom: 12px; }
+.addcase-title { font-size: 24px; font-weight: 700; color: #333333; margin: 0; }
+.addcase-subtitle { font-size: 14px; color: #555555; margin: 4px 0 0 0; }
+
+.addcase-actions .btn--primary { background-color: #1A2B42; color: #FFFFFF; }
+.addcase-actions .btn--secondary { background-color: #FFFFFF; color: #333333; border: 1px solid #E5E5E5; }
+
+.addcase-alert { margin-bottom: 12px; }
+
+/* Inputs */
+.addcase-card .form-control, .addcase-card .form-select {
+  border: 1px solid #E5E5E5;
+  border-radius: 8px;
+}
+.addcase-card .form-control:focus, .addcase-card .form-select:focus {
+  outline: none;
+  border-color: #1A2B42;
+  box-shadow: 0 0 0 3px rgba(26, 43, 66, 0.1);
+}
+
+.app-header_newcase__container {
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+/* Header width wrapper */
+.addcase-header-wrap {
+  padding: 0;
+}
+
+/* Suggestions */
+.addcase-suggest {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 5;
+  background: #FFFFFF;
+  border: 1px solid #E5E5E5;
+  border-radius: 8px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  margin-top: 6px;
+}
+
+.addcase-suggest__btn {
+  width: 100%;
+  text-align: left;
+  padding: 10px 12px;
+  background: #FFFFFF;
+  border: 0;
+  border-bottom: 1px solid #F0F0F0;
+  cursor: pointer;
+}
+.addcase-suggest__btn:last-child { border-bottom: 0; }
+.addcase-suggest__btn:focus { outline: 2px solid #1A2B42; outline-offset: 2px; }
+
+.addcase-suggest__name { display: block; color: #333333; font-weight: 600; font-size: 14px; }
+.addcase-suggest__meta { display: block; color: #777777; font-size: 12px; margin-top: 2px; }
+
+/* Case Type Dropdown Styling */
+.addcase-card .form-select[name="type"] {
+  background-color: #FFFFFF;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m1 6 7 7 7-7'/%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 16px 12px;
+  padding-right: 40px;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+.addcase-card .form-select[name="type"]:focus {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%231A2B42' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m1 6 7 7 7-7'/%3e%3c/svg%3e");
+}
+
+.addcase-card .form-select[name="type"] option {
+  padding: 8px 12px;
+  color: #333333;
+  background-color: #FFFFFF;
+}
+
+.addcase-card .form-select[name="type"] option:hover {
+  background-color: #F8F9FA;
+}

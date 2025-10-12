@@ -1,0 +1,328 @@
+/* Digital Justice Platform - Main Stylesheet */
+/* Combined: variables, bootstrap-overrides, animations, responsive */
+
+/* ===== BOOTSTRAP OVERRIDES ===== */
+.bg-primary_ {
+  background-color: #1A2B42 !important;
+}
+
+.text-primary {
+  color: #1A2B42 !important;
+}
+
+.text-accent {
+  color: #FF8C00 !important;
+}
+
+.bg-accent {
+  background-color: #FF8C00 !important;
+}
+
+.bg-light-custom {
+  background-color: #F8F8F8 !important;
+}
+
+/* Custom utility classes for exact spacing */
+.px-exact-4 { padding-left: 4px; padding-right: 4px; }
+.px-exact-8 { padding-left: 8px; padding-right: 8px; }
+.px-exact-16 { padding-left: 16px; padding-right: 16px; }
+.px-exact-24 { padding-left: 24px; padding-right: 24px; }
+.px-exact-32 { padding-left: 32px; padding-right: 32px; }
+.px-exact-48 { padding-left: 48px; padding-right: 48px; }
+.px-exact-64 { padding-left: 64px; padding-right: 64px; }
+
+.py-exact-4 { padding-top: 4px; padding-bottom: 4px; }
+.py-exact-8 { padding-top: 8px; padding-bottom: 8px; }
+.py-exact-16 { padding-top: 16px; padding-bottom: 16px; }
+.py-exact-24 { padding-top: 24px; padding-bottom: 24px; }
+.py-exact-32 { padding-top: 32px; padding-bottom: 32px; }
+.py-exact-48 { padding-top: 48px; padding-bottom: 48px; }
+.py-exact-64 { padding-top: 64px; padding-bottom: 64px; }
+
+.mx-exact-4 { margin-left: 4px; margin-right: 4px; }
+.mx-exact-8 { margin-left: 8px; margin-right: 8px; }
+.mx-exact-16 { margin-left: 16px; margin-right: 16px; }
+.mx-exact-24 { margin-left: 24px; margin-right: 24px; }
+.mx-exact-32 { margin-left: 32px; margin-right: 32px; }
+.mx-exact-48 { margin-left: 48px; margin-right: 48px; }
+.mx-exact-64 { margin-left: 64px; margin-right: 64px; }
+
+.my-exact-4 { margin-top: 4px; margin-bottom: 4px; }
+.my-exact-8 { margin-top: 8px; margin-bottom: 8px; }
+.my-exact-16 { margin-top: 16px; margin-bottom: 16px; }
+.my-exact-24 { margin-top: 24px; margin-bottom: 24px; }
+.my-exact-32 { margin-top: 32px; margin-bottom: 32px; }
+.my-exact-48 { margin-top: 48px; margin-bottom: 48px; }
+.my-exact-64 { margin-top: 64px; margin-bottom: 64px; }
+
+/* Override Bootstrap's default shadows */
+.shadow-custom-sm {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1) !important;
+}
+
+.shadow-custom-md {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
+}
+
+.shadow-custom-lg {
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Override Bootstrap's default card styles */
+.card {
+  border: none !important;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
+}
+
+.card:hover {
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* Custom link styles */
+a {
+  color: #1A2B42;
+  text-decoration: none !important;
+  transition: color 0.15s ease-in-out !important;
+}
+
+a:hover {
+  color: #FF8C00 !important;
+  text-decoration: underline !important;
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-4px);
+  }
+  60% {
+    transform: translateY(-2px);
+  }
+}
+
+/* Apply entrance animations */
+.hero-title {
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.hero-description {
+  animation: fadeInUp 0.8s ease-out 0.2s both;
+}
+
+.portal-card {
+  animation: fadeInScale 0.6s ease-out both;
+}
+
+/* Hover effects removed */
+
+/* Focus states for accessibility */
+.portal-card:focus-within {
+  outline: 2px solid #FF8C00;
+  outline-offset: 2px;
+}
+
+/* Transitions removed */
+
+/* Respect reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  
+  .hero-title,
+  .hero-description,
+  .portal-card {
+    animation: none !important;
+  }
+}
+
+/* ===== DEBUG MODE ===== */
+.debug-mode {
+  position: relative;
+}
+
+.debug-mode::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    linear-gradient(to right, rgba(255, 0, 0, 0.1) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 0, 0, 0.1) 1px, transparent 1px);
+  background-size: 20px 20px;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+/* Mobile First Approach */
+
+/* Extra Small devices (phones, 576px and down) */
+@media (max-width: 575.98px) {
+  .hero-title {
+    font-size: 32px !important;
+    line-height: 1.2 !important;
+  }
+  
+  .hero-description {
+    font-size: 16px !important;
+  }
+  
+  .portal-card .card-body {
+    padding: 32px 16px !important;
+    min-height: 160px !important;
+  }
+  
+  .portal-card h3 {
+    font-size: 18px !important;
+  }
+  
+  .portal-card svg {
+    width: 36px !important;
+    height: 36px !important;
+  }
+  
+  /* Header adjustments for mobile */
+  .header-branding {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .header-branding .logo {
+    margin-bottom: 16px;
+  }
+  
+  .header-branding .text-content {
+    text-align: center;
+  }
+  
+  .header-branding .text-content div:first-child {
+    font-size: 24px !important;
+  }
+  
+  .header-branding .text-content div:nth-child(2) {
+    font-size: 16px !important;
+  }
+  
+  .header-branding .text-content div:nth-child(3) {
+    font-size: 12px !important;
+  }
+  
+  /* Navigation adjustments */
+  .header-nav ul {
+    flex-direction: column;
+    gap: 8px !important;
+    text-align: center;
+  }
+  
+  .header-nav ul li {
+    margin: 0;
+  }
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .hero-title {
+    font-size: 40px !important;
+  }
+  
+  .portal-card .card-body {
+    padding: 40px 20px !important;
+  }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .hero-title {
+    font-size: 44px !important;
+  }
+  
+  .portal-card .card-body {
+    padding: 44px 22px !important;
+  }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  .hero-title {
+    font-size: 48px !important;
+  }
+  
+  .portal-card .card-body {
+    padding: 48px 24px !important;
+  }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+  
+  .hero-title {
+    font-size: 52px !important;
+  }
+}
+
+/* Ultra wide screens (1400px and up) */
+@media (min-width: 1400px) {
+  .container {
+    max-width: 1320px;
+  }
+}
+
+/* Print styles */
+@media print {
+  .debug-mode::before {
+    display: none !important;
+  }
+  
+  .portal-card {
+    break-inside: avoid;
+  }
+  
+  .hero-title,
+  .hero-description {
+    color: #000 !important;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .portal-card {
+    border: 2px solid #000 !important;
+  }
+  
+  .portal-card:hover {
+    border-color: #FF8C00 !important;
+  }
+}

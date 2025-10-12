@@ -1,0 +1,427 @@
+/* Judge Dashboard Styles - Pixel Perfect Implementation */
+
+/* ===== LAYOUT CONTAINERS ===== */
+.judge-dashboard {
+  min-height: 100vh;
+  background-color: #f1eeea87;
+}
+
+.judge-dashboard__main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ===== JUDGE DASHBOARD HERO ===== */
+.judge-dashboard__hero {
+  padding: 48px 0 32px 0;
+}
+
+.judge-dashboard__title {
+  font-size: 32px;
+  font-weight: 700;
+  color: #333333;
+  margin: 0 0 8px 0;
+  line-height: 1.2;
+}
+
+.judge-dashboard__description {
+  font-size: 16px;
+  color: #555555;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* ===== ALERTS ===== */
+.alerts {
+  margin-bottom: 24px;
+}
+
+.alerts__title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #1A2B42;
+  margin: 0 0 12px 0;
+}
+
+.alerts__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.alerts__item {
+  background: #FFFFFF;
+  border: 1px solid #E5E5E5;
+  border-radius: 8px;
+  padding: 12px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.alerts__item--critical {
+  background: #fdeeee;
+  border-color: #f0caca;
+}
+
+.alerts__icon {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #1A2B42;
+  color: #FFFFFF;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+}
+
+.alerts__text {
+  flex: 1;
+  color: #333333;
+  font-size: 14px;
+}
+
+.alerts__button {
+  white-space: nowrap;
+}
+
+/* ===== HEARINGS LIST ===== */
+.judge-dashboard__hearings {
+  margin-bottom: 32px;
+}
+
+.hearings-list {
+  background-color: #FFFFFF;
+  border: 1px solid #E5E5E5;
+  border-radius: 8px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.hearings-list__header {
+  margin-bottom: 8px;
+}
+
+.hearings-list__title-section {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.hearings-list__icon {
+  color: #1A2B42;
+}
+
+.hearings-list__title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #333333;
+  margin: 0;
+}
+
+.hearings-list__description {
+  font-size: 14px;
+  color: #555555;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.hearings-list__content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* ===== HEARING CARD ===== */
+.hearing-card {
+  padding: 16px;
+  margin-bottom: 0;
+  border: 1px solid #E5E5E5;
+  background-color: #F8F8F8;
+  border-radius: 6px;
+}
+
+.hearing-card__header {
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.hearing-card__title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333333;
+  margin: 0;
+  flex: 1;
+  margin-right: 12px;
+}
+
+.hearing-card__details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 8px;
+  align-items: center;
+}
+
+.hearing-card__detail {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.hearing-card__icon {
+  color: #555555;
+}
+
+.hearing-card__text {
+  font-size: 14px;
+  color: #555555;
+}
+
+.hearing-card__case-pill {
+  padding: 4px 8px;
+  background: #F5F5F5;
+  border: 1px solid #E5E5E5;
+  border-radius: 999px;
+  font-size: 12px;
+  color: #333333;
+}
+
+.hearing-card__actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.hearing-card__start {
+  background-color: #0F1A2E;
+  color: #FFFFFF;
+}
+
+/* ===== PRIORITY CHIP ===== */
+.priority-chip {
+  margin-left: 8px;
+  padding: 2px 6px;
+  font-size: 11px;
+  border-radius: 999px;
+  border: 1px solid #E5E5E5;
+  color: #333333;
+}
+
+.priority-chip--danger { 
+  background: #fdeeee; 
+  border-color: #f0caca; 
+  color: #8a1c1c; 
+}
+
+.priority-chip--warning { 
+  background: #fff6e5; 
+  border-color: #f8e4bf; 
+  color: #8a5f00; 
+}
+
+.priority-chip--default { 
+  background: #f0f9f0; 
+  border-color: #c6e6c6; 
+  color: #166534; 
+}
+
+/* ===== BADGE COMPONENT ===== */
+.badge {
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+.badge--scheduled {
+  background-color: #F5F5F5;
+  color: #000000;
+}
+
+.badge--confirmed {
+  background-color: #1A2B42;
+  color: #FFFFFF;
+}
+
+.badge--default {
+  background-color: #E5E5E5;
+  color: #333333;
+}
+
+/* ===== COUNT BADGE ===== */
+.count-badge {
+  margin-left: 8px;
+  padding: 2px 6px;
+  font-size: 12px;
+  border-radius: 8px;
+  background: #F5F5F5;
+  color: #333333;
+}
+
+/* ===== STATS ===== */
+.stats { 
+  margin: 32px 0 24px 0; 
+}
+
+.stats__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.stat-card {
+  background: #FFFFFF;
+  border: 1px solid #E5E5E5;
+  border-radius: 8px;
+  padding: 16px;
+}
+
+.stat-card__icon { 
+  color: #0F1A2E; 
+  margin-bottom: 8px; 
+}
+
+.stat-card__value { 
+  font-size: 24px; 
+  font-weight: 700; 
+  color: #0F1A2E; 
+}
+
+.stat-card__label { 
+  font-size: 14px; 
+  color: #555555; 
+}
+
+/* ===== BUTTON COMPONENT ===== */
+.btn {
+  border: none;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.btn:focus {
+  outline: 2px solid #1A2B42;
+  outline-offset: 2px;
+}
+
+.btn--primary {
+  background-color: #1A2B42;
+  color: #FFFFFF;
+  padding: 12px 24px;
+  font-size: 14px;
+}
+
+.btn--secondary {
+  background-color: #FFFFFF;
+  color: #333333;
+  border: 1px solid #E5E5E5;
+  padding: 12px 24px;
+  font-size: 14px;
+}
+
+.btn--small {
+  padding: 8px 16px;
+  font-size: 12px;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 992px) {
+  .stats__grid { 
+    grid-template-columns: repeat(2, 1fr); 
+  }
+}
+
+@media (max-width: 768px) {
+  .judge-dashboard__main {
+    padding: 0 16px;
+  }
+  
+  .judge-dashboard__hero {
+    padding: 32px 0 24px 0;
+  }
+  
+  .judge-dashboard__title {
+    font-size: 28px;
+  }
+  
+  .hearing-card__header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  
+  .hearing-card__details {
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .hearing-card__actions {
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 576px) {
+  .judge-dashboard__title {
+    font-size: 24px;
+  }
+  
+  .judge-dashboard__description {
+    font-size: 14px;
+  }
+  
+  .hearing-card {
+    padding: 16px;
+  }
+  
+  .stats__grid { 
+    grid-template-columns: 1fr; 
+  }
+}
+
+/* ===== ACCESSIBILITY ===== */
+@media (prefers-reduced-motion: reduce) {
+  .btn {
+    transition: none;
+  }
+}
+
+/* ===== FOCUS STATES ===== */
+.btn:focus-visible,
+.alerts__button:focus-visible {
+  outline: 2px solid #1A2B42;
+  outline-offset: 2px;
+}
+
+/* ===== HIGH CONTRAST MODE ===== */
+@media (prefers-contrast: high) {
+  .hearing-card {
+    border: 2px solid #000000;
+  }
+  
+  .btn--secondary {
+    border: 2px solid #000000;
+  }
+}

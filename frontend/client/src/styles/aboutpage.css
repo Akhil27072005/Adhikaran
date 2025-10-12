@@ -1,0 +1,314 @@
+/* ABOUT PAGE — namespace: aboutpage- — Do not reuse these class names elsewhere */
+
+/* Page-scoped CSS variables */
+.aboutpage-container {
+  --aboutpage-primary-color: #1A2B42;
+  --aboutpage-secondary-color: #FF8C00;
+  --aboutpage-background-color: #F8F8F8;
+  --aboutpage-card-background: #FFFFFF;
+  --aboutpage-text-primary: #333333;
+  --aboutpage-text-secondary: #555555;
+  --aboutpage-text-muted: #777777;
+  --aboutpage-border-color: #E5E5E5;
+  --aboutpage-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  --aboutpage-shadow-hover: 0 4px 16px rgba(0, 0, 0, 0.12);
+  --aboutpage-border-radius: 8px;
+  --aboutpage-spacing-xs: 8px;
+  --aboutpage-spacing-sm: 16px;
+  --aboutpage-spacing-md: 24px;
+  --aboutpage-spacing-lg: 32px;
+  --aboutpage-spacing-xl: 48px;
+}
+
+/* Main container */
+.aboutpage-container {
+  min-height: 100vh;
+  background-color: var(--aboutpage-background-color);
+}
+
+.aboutpage-header-wrapper {
+  /* Wrapper for role header - no additional styling needed */
+}
+
+.aboutpage-main {
+  padding: var(--aboutpage-spacing-lg) 0;
+}
+
+.aboutpage-content-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--aboutpage-spacing-md);
+}
+
+/* Title section */
+.aboutpage-title-section {
+  text-align: center;
+  margin-bottom: var(--aboutpage-spacing-xl);
+}
+
+.aboutpage-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--aboutpage-primary-color);
+  margin-bottom: var(--aboutpage-spacing-sm);
+}
+
+.aboutpage-subtitle {
+  font-size: 1.125rem;
+  color: var(--aboutpage-text-secondary);
+  margin: 0;
+}
+
+/* Layout */
+.aboutpage-layout {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: var(--aboutpage-spacing-lg);
+  align-items: start;
+}
+
+.aboutpage-main-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--aboutpage-spacing-md);
+}
+
+/* Sections */
+.aboutpage-section {
+  background-color: var(--aboutpage-card-background);
+  border: 1px solid var(--aboutpage-border-color);
+  border-radius: var(--aboutpage-border-radius);
+  box-shadow: var(--aboutpage-shadow);
+  padding: var(--aboutpage-spacing-lg);
+  transition: box-shadow 0.2s ease;
+}
+
+.aboutpage-section:hover {
+  box-shadow: var(--aboutpage-shadow-hover);
+}
+
+.aboutpage-section-header {
+  display: flex;
+  align-items: center;
+  gap: var(--aboutpage-spacing-sm);
+  margin-bottom: var(--aboutpage-spacing-md);
+}
+
+.aboutpage-section-icon {
+  font-size: 1.5rem;
+}
+
+.aboutpage-section-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--aboutpage-primary-color);
+  margin: 0;
+}
+
+.aboutpage-section-content {
+  color: var(--aboutpage-text-primary);
+  line-height: 1.6;
+}
+
+.aboutpage-section-content p {
+  margin: 0;
+}
+
+/* Feature list */
+.aboutpage-feature-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.aboutpage-feature-item {
+  padding: var(--aboutpage-spacing-sm) 0;
+  border-bottom: 1px solid var(--aboutpage-border-color);
+  position: relative;
+  padding-left: var(--aboutpage-spacing-md);
+}
+
+.aboutpage-feature-item:last-child {
+  border-bottom: none;
+}
+
+.aboutpage-feature-item::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--aboutpage-secondary-color);
+  font-weight: bold;
+}
+
+/* Values list */
+.aboutpage-values-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: var(--aboutpage-spacing-sm);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.aboutpage-value-item {
+  background-color: var(--aboutpage-background-color);
+  padding: var(--aboutpage-spacing-sm);
+  border-radius: var(--aboutpage-border-radius);
+  text-align: center;
+  font-weight: 500;
+  color: var(--aboutpage-primary-color);
+}
+
+/* Who we serve grid */
+.aboutpage-serve-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--aboutpage-spacing-md);
+}
+
+.aboutpage-serve-item {
+  text-align: center;
+  padding: var(--aboutpage-spacing-md);
+  background-color: var(--aboutpage-background-color);
+  border-radius: var(--aboutpage-border-radius);
+}
+
+.aboutpage-serve-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--aboutpage-primary-color);
+  margin-bottom: var(--aboutpage-spacing-xs);
+}
+
+.aboutpage-serve-desc {
+  color: var(--aboutpage-text-secondary);
+  margin: 0;
+  font-size: 0.875rem;
+}
+
+/* Sidebar */
+.aboutpage-sidebar {
+  position: sticky;
+  top: var(--aboutpage-spacing-md);
+}
+
+.aboutpage-timings-card {
+  background-color: var(--aboutpage-card-background);
+  border: 1px solid var(--aboutpage-border-color);
+  border-radius: var(--aboutpage-border-radius);
+  box-shadow: var(--aboutpage-shadow);
+  padding: var(--aboutpage-spacing-md);
+}
+
+.aboutpage-timings-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--aboutpage-primary-color);
+  margin-bottom: var(--aboutpage-spacing-md);
+  text-align: center;
+}
+
+.aboutpage-timings-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.aboutpage-timings-caption {
+  caption-side: bottom;
+  font-size: 0.75rem;
+  color: var(--aboutpage-text-muted);
+  margin-top: var(--aboutpage-spacing-xs);
+}
+
+.aboutpage-timings-th {
+  background-color: var(--aboutpage-background-color);
+  padding: var(--aboutpage-spacing-sm);
+  text-align: left;
+  font-weight: 600;
+  color: var(--aboutpage-primary-color);
+  border-bottom: 2px solid var(--aboutpage-border-color);
+}
+
+.aboutpage-timings-td {
+  padding: var(--aboutpage-spacing-sm);
+  border-bottom: 1px solid var(--aboutpage-border-color);
+  color: var(--aboutpage-text-primary);
+}
+
+.aboutpage-timings-row:last-child .aboutpage-timings-td {
+  border-bottom: none;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .aboutpage-layout {
+    grid-template-columns: 1fr;
+    gap: var(--aboutpage-spacing-md);
+  }
+  
+  .aboutpage-sidebar {
+    order: -1;
+    position: static;
+  }
+  
+  .aboutpage-title {
+    font-size: 2rem;
+  }
+  
+  .aboutpage-content-wrapper {
+    padding: 0 var(--aboutpage-spacing-sm);
+  }
+  
+  .aboutpage-section {
+    padding: var(--aboutpage-spacing-md);
+  }
+  
+  .aboutpage-serve-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .aboutpage-values-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .aboutpage-title {
+    font-size: 1.75rem;
+  }
+  
+  .aboutpage-values-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Print styles */
+@media print {
+  .aboutpage-container {
+    background-color: white;
+  }
+  
+  .aboutpage-section {
+    background-color: white;
+    box-shadow: none;
+    border: 1px solid #000;
+    page-break-inside: avoid;
+    margin-bottom: 1rem;
+  }
+  
+  .aboutpage-timings-card {
+    background-color: white;
+    box-shadow: none;
+    border: 1px solid #000;
+  }
+  
+  .aboutpage-header-wrapper {
+    display: none;
+  }
+}
+
+/* Focus states for accessibility */
+.aboutpage-section:focus-within {
+  outline: 2px solid var(--aboutpage-primary-color);
+  outline-offset: 2px;
+}

@@ -1,0 +1,486 @@
+/* NAMESPACED CSS for Case Summary Edit Mode */
+
+/* Edit Toggle Button */
+.case-summary-edit-toggle {
+  background-color: transparent;
+  color: #1A2B42;
+  border: none;
+  padding: 8px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  margin-left: 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  transition: background-color 0.2s ease;
+}
+
+.case-summary-edit-toggle:hover {
+  background-color: rgba(26, 43, 66, 0.1);
+}
+
+.case-summary-edit-toggle:disabled {
+  background-color: transparent;
+  color: #9ca3af;
+  cursor: not-allowed;
+}
+
+/* Edit Mode Container */
+.case-summary-edit-mode {
+  background: #F8F8F8;
+  border: 1px solid #E5E5E5;
+  border-radius: 6px;
+  padding: 24px;
+  margin: 16px 0;
+}
+
+.case-summary-edit-mode h3 {
+  color: #1A2B42;
+  margin-bottom: 20px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+/* Edit Fields */
+.case-summary-edit-field {
+  margin-bottom: 20px;
+}
+
+.case-summary-edit-field label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: #333333;
+  font-size: 14px;
+}
+
+.case-summary-edit-field input,
+.case-summary-edit-field textarea,
+.case-summary-edit-field select {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid #E5E5E5;
+  border-radius: 6px;
+  font-size: 14px;
+  color: #333333;
+  background-color: #FFFFFF;
+}
+
+.case-summary-edit-field input:focus,
+.case-summary-edit-field textarea:focus,
+.case-summary-edit-field select:focus {
+  outline: none;
+  border-color: #1A2B42;
+  box-shadow: 0 0 0 3px rgba(26, 43, 66, 0.1);
+}
+
+.case-summary-edit-field textarea {
+  min-height: 80px;
+  resize: vertical;
+}
+
+/* Evidence Upload Button */
+.case-summary-edit-evidence-btn {
+  background-color: #1A2B42;
+  color: #FFFFFF;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.case-summary-edit-evidence-btn:hover {
+  background-color: #0F1A2B;
+}
+
+/* Date/Time Picker */
+.case-summary-edit-datetime {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.case-summary-edit-datetime input[type="date"],
+.case-summary-edit-datetime input[type="time"] {
+  flex: 1;
+}
+
+/* User Picker */
+.user-picker {
+  position: relative;
+}
+
+.user-picker-input-container {
+  position: relative;
+}
+
+.user-picker-input {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid #E5E5E5;
+  border-radius: 6px;
+  font-size: 14px;
+  color: #333333;
+  background-color: #FFFFFF;
+}
+
+.user-picker-input:focus {
+  outline: none;
+  border-color: #1A2B42;
+  box-shadow: 0 0 0 3px rgba(26, 43, 66, 0.1);
+}
+
+.user-picker-loading {
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #999999;
+  font-size: 12px;
+}
+
+.user-picker-suggestions {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: #FFFFFF;
+  border: 1px solid #E5E5E5;
+  border-top: none;
+  border-radius: 0 0 6px 6px;
+  max-height: 200px;
+  overflow-y: auto;
+  z-index: 1000;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.user-picker-suggestion {
+  padding: 12px 16px;
+  cursor: pointer;
+  border-bottom: 1px solid #F8F8F8;
+}
+
+.user-picker-suggestion:hover {
+  background: #F8F8F8;
+}
+
+.user-picker-suggestion:last-child {
+  border-bottom: none;
+}
+
+.user-picker-suggestion-name {
+  font-weight: 500;
+  color: #1A2B42;
+  margin-bottom: 2px;
+}
+
+.user-picker-suggestion-email {
+  font-size: 12px;
+  color: #999999;
+  margin-bottom: 2px;
+}
+
+.user-picker-suggestion-city {
+  font-size: 11px;
+  color: #999999;
+}
+
+.user-picker-selected {
+  margin-top: 12px;
+}
+
+.user-picker-selected-label {
+  font-size: 12px;
+  color: #999999;
+  margin-bottom: 8px;
+}
+
+.user-picker-tag {
+  display: inline-flex;
+  align-items: center;
+  background: #F8F8F8;
+  color: #1A2B42;
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 12px;
+  margin-right: 8px;
+  margin-bottom: 8px;
+  border: 1px solid #E5E5E5;
+}
+
+.user-picker-tag-name {
+  margin-right: 6px;
+}
+
+.user-picker-tag-remove {
+  background: none;
+  border: none;
+  color: #999999;
+  cursor: pointer;
+  font-size: 14px;
+  line-height: 1;
+  padding: 0;
+  margin-left: 4px;
+}
+
+.user-picker-tag-remove:hover {
+  color: #dc2626;
+}
+
+/* Modal Styles - Using Bootstrap modal classes */
+
+/* Ensure modal content is fully visible and not affected by backdrop */
+.dashboard-upload-modal .modal-content {
+  opacity: 1 !important;
+  visibility: visible !important;
+  z-index: 1056 !important;
+  position: relative !important;
+}
+
+.dashboard-upload-modal .modal-dialog {
+  opacity: 1 !important;
+  visibility: visible !important;
+  z-index: 1056 !important;
+}
+
+.dashboard-upload-modal .modal-header,
+.dashboard-upload-modal .modal-body,
+.dashboard-upload-modal .modal-footer {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Ensure form elements are fully interactive */
+.dashboard-upload-modal .form-control,
+.dashboard-upload-modal .form-select,
+.dashboard-upload-modal .btn {
+  opacity: 1 !important;
+  pointer-events: auto !important;
+  z-index: 1057 !important;
+  position: relative !important;
+}
+
+/* Ensure dropzone is fully interactive */
+.dashboard-upload-modal .dashboard-upload-dropzone {
+  opacity: 1 !important;
+  pointer-events: auto !important;
+  z-index: 1057 !important;
+  position: relative !important;
+}
+
+/* Ensure modal backdrop is behind the modal content */
+.dashboard-upload-modal + .modal-backdrop {
+  z-index: 1040 !important;
+  opacity: 0.5 !important;
+}
+
+/* Ensure the modal container itself is properly positioned above backdrop */
+.dashboard-upload-modal {
+  z-index: 1055 !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Error Messages */
+.case-summary-edit-error {
+  color: #dc2626;
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+/* Inline Edit Inputs */
+.case-summary-edit-input {
+  width: 100%;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  background-color: #f8f9fa;
+  transition: background-color 0.2s ease;
+}
+
+.case-summary-edit-input:focus {
+  outline: none;
+  background-color: #ffffff;
+  box-shadow: 0 0 0 2px rgba(26, 43, 66, 0.1);
+}
+
+.case-summary-edit-input[type="datetime-local"] {
+  width: auto;
+  min-width: 200px;
+}
+
+.case-summary-edit-input select {
+  cursor: pointer;
+  background-color: #f8f9fa;
+}
+
+.case-summary-edit-input select:focus {
+  background-color: #ffffff;
+}
+
+/* Clean dropdown styling */
+.case-summary-edit-input select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3e%3c/svg%3e");
+  background-position: right 8px center;
+  background-repeat: no-repeat;
+  background-size: 16px;
+  padding-right: 32px;
+}
+
+/* Dropdown options styling */
+.case-summary-edit-input select option {
+  background-color: #ffffff;
+  color: #1A2B42;
+  padding: 8px 12px;
+  border: none;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.case-summary-edit-input select option:hover {
+  background-color: #f8f9fa;
+}
+
+.case-summary-edit-input select option:checked {
+  background-color: #1A2B42;
+  color: #ffffff;
+}
+
+.case-summary-edit-input select option:focus {
+  background-color: #f8f9fa;
+  outline: none;
+}
+
+/* Option classes for better control */
+.case-summary-edit-input select option.option-default {
+  background-color: #ffffff;
+  color: #6b7280;
+  font-style: italic;
+}
+
+.case-summary-edit-input select option.option-selected {
+  background-color: #1A2B42;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.case-summary-edit-input select option.option-highlighted {
+  background-color: #f8f9fa;
+  color: #1A2B42;
+  font-weight: 500;
+}
+
+.case-summary-edit-input select option.option-disabled {
+  background-color: #f3f4f6;
+  color: #9ca3af;
+  cursor: not-allowed;
+}
+
+.case-summary-edit-input select option.option-group {
+  background-color: #e5e7eb;
+  color: #374151;
+  font-weight: 600;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Clean datetime input styling */
+.case-summary-edit-input[type="datetime-local"] {
+  background-color: #f8f9fa;
+}
+
+.case-summary-edit-input[type="datetime-local"]:focus {
+  background-color: #ffffff;
+}
+
+/* Witnesses Display */
+.witnesses-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.witnesses-list li {
+  background: #f8f9fa;
+  border: 1px solid #e9ecef;
+  border-radius: 6px;
+  padding: 12px;
+  margin-bottom: 8px;
+}
+
+.witness-name {
+  font-weight: 600;
+  color: #1A2B42;
+  margin-bottom: 4px;
+}
+
+.witness-contact {
+  color: #6c757d;
+  font-size: 14px;
+  margin-bottom: 2px;
+}
+
+.witness-location {
+  color: #6c757d;
+  font-size: 12px;
+  font-style: italic;
+}
+
+.user-picker-error {
+  color: #dc2626;
+  font-size: 12px;
+  margin-top: 8px;
+}
+
+.error-message {
+  color: #dc2626;
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+/* Global Save/Cancel Actions */
+.case-summary-edit-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid #E5E5E5;
+}
+
+.case-summary-edit-save-btn {
+  background-color: #1A2B42;
+  color: #FFFFFF;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.case-summary-edit-save-btn:hover {
+  background-color: #0F1A2B;
+}
+
+.case-summary-edit-cancel-btn {
+  background-color: #FFFFFF;
+  color: #333333;
+  border: 1px solid #E5E5E5;
+  padding: 12px 24px;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.case-summary-edit-cancel-btn:hover {
+  background-color: #F8F8F8;
+}

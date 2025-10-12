@@ -1,0 +1,84 @@
+/* Page background */
+.page-container {
+  padding: 20px;
+  background-color: #f8f9fa;
+  min-height: 100vh;
+}
+
+/* Case cards (vertical stack, floating look) */
+.case-card {
+  border: 1px solid #dee2e6;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  padding: 16px;
+  margin: 0 auto 20px auto;   /* Center & add spacing between cards */
+  max-width: 600px;           /* Card width limit */
+  background: #ffffff;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Hover effect (float) */
+.case-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+/* Card heading */
+.case-card h5 {
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 10px;
+}
+
+/* Card text */
+.case-card p {
+  margin: 4px 0;
+  font-size: 14px;
+  color: #495057;
+}
+
+/* Badges */
+.badge {
+  padding: 6px 10px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.badge-upcoming {
+  background-color: #007bff;
+  color: #fff;
+}
+.badge-closed {
+  background-color: #28a745;
+  color: #fff;
+}
+.badge-verdict {
+  background-color: #6f42c1;
+  color: #fff;
+}
+
+/* View Summary Button */
+.view-summary-btn {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  margin-top: 12px;
+  transition: all 0.2s ease;
+}
+
+.view-summary-btn:hover {
+  background-color: #0056b3;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 123, 255, 0.3);
+}
+
+.view-summary-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 123, 255, 0.3);
+}
