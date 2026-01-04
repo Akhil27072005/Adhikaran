@@ -371,35 +371,143 @@ export default function CaseSummary() {
             <h3 className="card-title">AI Summary</h3>
             <div className="field-value">{mlAnalysis?.summary || "No AI summary available."}</div>
 
-            <div className="mt-4">
-              <h4 className="card-subtitle">ML Judgement</h4>
-              {mlAnalysis?.ml_prediction ? (
-                <div className="ml-prediction">
+            {mlAnalysis && (
+              <div className="mt-4">
+                <h4 className="card-subtitle">ML Analysis & Judgement</h4>
+                
+                {/* ML Prediction */}
+                {mlAnalysis.ml_prediction && (
+                  <div className="ml-prediction mb-3">
+                    <div className="field-value">
+                      <strong>Judgement:</strong>{" "}
+                      <span className="badge-custom badge-blue">
+                        {mlAnalysis.ml_prediction.label?.replace("_", " ").toUpperCase() || "N/A"}
+                      </span>
+                    </div>
+                  </div>
+                )}
+
+                {/* Confidence Score & Probability */}
+                <div className="metrics-grid mb-3" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
                   <div className="field-value">
-                    <strong>Prediction:</strong> {mlAnalysis.ml_prediction.label}
+                    <strong>Confidence Score:</strong>{" "}
+                    {mlAnalysis.confidence_score !== undefined && mlAnalysis.confidence_score !== null
+                      ? `${(mlAnalysis.confidence_score * 100).toFixed(1)}%`
+                      : "N/A"}
                   </div>
                   <div className="field-value">
                     <strong>Probability:</strong>{" "}
-                    {(mlAnalysis.ml_prediction.details?.probability ?? mlAnalysis.ml_prediction.details?.prob) || "N/A"}
+                    {mlAnalysis.probability !== undefined && mlAnalysis.probability !== null
+                      ? `${(mlAnalysis.probability * 100).toFixed(1)}%`
+                      : "N/A"}
                   </div>
-                  <div className="field-value">
-                    <strong>Confidence:</strong> {mlAnalysis.ml_prediction.details?.confidence ?? "N/A"}
+                </div>
+
+                {/* Reasoning */}
+                {mlAnalysis.reasoning && (
+                  <div className="mb-3">
+                    <h5 className="card-subtitle" style={{ fontSize: '0.9rem', marginBottom: '0.5rem' }}>Reasoning</h5>
+                    <div className="reasoning-box" style={{ 
+                      padding: '1rem', 
+                      backgroundColor: '#f8f9fa', 
+                      borderRadius: '4px',
+                      border: '1px solid #e5e7eb'
+                    }}>
+                      {mlAnalysis.reasoning}
+                    </div>
                   </div>
-                  {mlAnalysis.ml_prediction.details?.reasoning && (
-                    <div className="reasoning-box">{mlAnalysis.ml_prediction.details.reasoning}</div>
-                  )}
-                  {mlAnalysis.ml_prediction.details?.key_points && (
-                    <ul className="mt-3">
-                      {mlAnalysis.ml_prediction.details.key_points.map((kp, i) => (
-                        <li key={i}>{kp}</li>
+                )}
+
+                {/* IPC Violations & Penalties */}
+                {mlAnalysis.ipc_section_violated && mlAnalysis.ipc_section_violated.length > 0 && (
+                  <div className="mb-3">
+                    <h5 className="card-subtitle" style={{ fontSize: '0.9rem', marginBottom: '0.5rem' }}>IPC Violations</h5>
+                    <div className="ipc-violations">
+                      {mlAnalysis.ipc_section_violated.map((section, i) => {
+                        const penalty = mlAnalysis.penalties?.find(p => p.section === section);
+                        return (
+                          <div key={i} className="ipc-item" style={{ 
+                            marginBottom: '0.75rem',
+                            padding: '0.75rem',
+                            backgroundColor: '#fff',
+                            border: '1px solid #e5e7eb',
+                            borderRadius: '4px'
+                          }}>
+                            <div style={{ fontWeight: 'bold', marginBottom: '0.25rem' }}>
+                              {section}
+                            </div>
+                            {penalty && (
+                              <div style={{ color: '#6b7280', fontSize: '0.9rem' }}>
+                                <strong>Penalty:</strong> {penalty.penalty}
+                                {penalty.severity && (
+                                  <span className="badge-custom" style={{ 
+                                    marginLeft: '0.5rem',
+                                    fontSize: '0.75rem'
+                                  }}>
+                                    {penalty.severity.toUpperCase()}
+                                  </span>
+                                )}
+                              </div>
+                            )}
+                          </div>
+                        );
+                      })}
+                    </div>
+                  </div>
+                )}
+
+                {/* Penalties (if structured separately) */}
+                {mlAnalysis.penalties && mlAnalysis.penalties.length > 0 && 
+                 (!mlAnalysis.ipc_section_violated || mlAnalysis.ipc_section_violated.length === 0) && (
+                  <div className="mb-3">
+                    <h5 className="card-subtitle" style={{ fontSize: '0.9rem', marginBottom: '0.5rem' }}>Penalties</h5>
+                    <div className="penalties-list">
+                      {mlAnalysis.penalties.map((penalty, i) => (
+                        <div key={i} className="penalty-item" style={{ 
+                          marginBottom: '0.75rem',
+                          padding: '0.75rem',
+                          backgroundColor: '#fff',
+                          border: '1px solid #e5e7eb',
+                          borderRadius: '4px'
+                        }}>
+                          {penalty.section && (
+                            <div style={{ fontWeight: 'bold', marginBottom: '0.25rem' }}>
+                              {penalty.section}
+                            </div>
+                          )}
+                          <div style={{ color: '#6b7280', fontSize: '0.9rem' }}>
+                            {penalty.penalty}
+                            {penalty.severity && (
+                              <span className="badge-custom" style={{ 
+                                marginLeft: '0.5rem',
+                                fontSize: '0.75rem'
+                              }}>
+                                {penalty.severity.toUpperCase()}
+                              </span>
+                            )}
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                {/* Key Points */}
+                {mlAnalysis.key_points && mlAnalysis.key_points.length > 0 && (
+                  <div className="mb-3">
+                    <h5 className="card-subtitle" style={{ fontSize: '0.9rem', marginBottom: '0.5rem' }}>Key Points</h5>
+                    <ul className="key-points-list" style={{ 
+                      paddingLeft: '1.5rem',
+                      listStyleType: 'disc'
+                    }}>
+                      {mlAnalysis.key_points.map((point, i) => (
+                        <li key={i} style={{ marginBottom: '0.5rem' }}>{point}</li>
                       ))}
                     </ul>
-                  )}
-                </div>
-              ) : (
-                <div className="text-muted">No ML judgement available.</div>
-              )}
-            </div>
+                  </div>
+                )}
+              </div>
+            )}
           </div>
 
           {/* Final Verdict & Sentence - Always show for judges */}

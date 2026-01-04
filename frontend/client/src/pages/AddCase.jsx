@@ -47,7 +47,7 @@ export default function AddCase(){
 
   // Fetch user suggestions (defendant search) with debounce
   useEffect(() => {
-    const q = form.defendantName.trim();
+    const q = (form.defendantName || '').trim();
     if (userSuggestTimer.current) {
       clearTimeout(userSuggestTimer.current);
     }
@@ -256,7 +256,7 @@ export default function AddCase(){
 
   const handlePickSuggestion = (p) => {
     setDefendantId(p._id);
-    setForm(prev => ({ ...prev, defendantName: p.name, defendantEmail: p.email, defendantContact: p.phone || '' }));
+    setForm(prev => ({ ...prev, defendantName: p.fullName || p.name || '', defendantEmail: p.email || '', defendantContact: p.phone || '' }));
     setShowNameSuggest(false);
   };
 
@@ -352,8 +352,8 @@ export default function AddCase(){
                             {!userSuggestLoading && userSuggestions.map(p => (
                               <li key={p._id}>
                                 <button type="button" className="addcase-suggest__btn" onClick={() => handlePickSuggestion(p)}>
-                                  <span className="addcase-suggest__name">{p.name}</span>
-                                  <span className="addcase-suggest__meta">{p.email} • {p.city}{p.phone ? ` • ${p.phone}` : ''}</span>
+                                  <span className="addcase-suggest__name">{p.fullName || p.name || 'Unknown'}</span>
+                                  <span className="addcase-suggest__meta">{p.email || ''} • {p.city || ''}{p.phone ? ` • ${p.phone}` : ''}</span>
                                 </button>
                               </li>
                             ))}

@@ -89,8 +89,8 @@ const UserDashboard = () => {
   };
 
   const handleViewDetails = (hearingId) => {
-    // TODO: Navigate to hearing details or open modal
-    console.log('View details for hearing:', hearingId);
+    // Navigate to case summary page with the case ID
+    navigate(`/cases/${hearingId}/summary`);
   };
 
   const handleEditCase = (caseId) => {

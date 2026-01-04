@@ -6,6 +6,7 @@ const authorizeRole = require('../middleware/authorizeRole');
 const { uploadSingle, handleMulterError } = require('../middleware/multerMemory');
 const cloudinaryUpload = require('../middleware/cloudinaryUpload');
 const { generateReadableCaseId, generateNextHearingDate } = require('../utils/caseUtils');
+const { generateCaseAnalysis } = require('../utils/caseAnalysis');
 
 const Case = require('../models/cases');
 const Evidence = require('../models/evidence');
@@ -203,6 +204,14 @@ router.post('/add', authenticateToken, async (req, res) => {
     console.log(`✅ Case created: ${readableCaseId} (MongoDB ID: ${newCase._id})`);
     if (nextHearing) {
       console.log(`📅 Next hearing scheduled: ${nextHearing.toISOString()}`);
+    }
+
+    // Trigger Gemini analysis asynchronously (fire-and-forget)
+    // Works for both draft and filed cases
+    if (description && description.trim().length > 0) {
+      generateCaseAnalysis(newCase._id.toString()).catch(err => {
+        console.error('❌ Background analysis error (non-blocking):', err.message);
+      });
     }
 
     return res.status(201).json({
@@ -489,6 +498,14 @@ router.put('/:id/update', authenticateToken, async (req, res) => {
       console.log(`📅 Next hearing scheduled: ${nextHearing.toISOString()}`);
     }
 
+    // Trigger Gemini analysis asynchronously if description changed
+    const descriptionChanged = description && description !== existingCase.case_description;
+    if (descriptionChanged && description.trim().length > 0) {
+      generateCaseAnalysis(caseId).catch(err => {
+        console.error('Background analysis error (non-blocking):', err.message);
+      });
+    }
+
     return res.status(200).json({
       message: draft ? 'Case updated as draft' : 'Case filed successfully',
       caseId: updatedCase._id,
@@ -666,6 +683,18 @@ router.patch('/:id', authenticateToken, authorizeRole(['judge']), async (req, re
     .populate('witnesses', 'fullName email phone city')
     .populate('lastEditedBy', 'fullName email');
 
+    // Trigger Gemini analysis asynchronously if case_description or status changed
+    const descriptionChanged = filteredUpdate.case_description && 
+                                filteredUpdate.case_description !== caseDoc.case_description;
+    const statusChanged = filteredUpdate.status && filteredUpdate.status !== caseDoc.status;
+    
+    if ((descriptionChanged || statusChanged) && 
+        filteredUpdate.case_description && 
+        filteredUpdate.case_description.trim().length > 0) {
+      generateCaseAnalysis(caseId).catch(err => {
+        console.error('Background analysis error (non-blocking):', err.message);
+      });
+    }
 
     return res.json({
       message: 'Case updated successfully',
